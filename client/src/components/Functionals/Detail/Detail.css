@@ -1,0 +1,63 @@
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 900;
+  background-image: url("https://img.freepik.com/fotos-premium/bokeh-defocused-desenfoque-fondo-arboles-jardin-luz-sol_1627-2633.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  align-items: center;
+}
+.detail2 {
+  display: flex;
+  flex-direction: column;
+  border: 3px black solid;
+  border-radius: 10px;
+  background-color: rgba(245, 245, 220, 0.417);
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  font-family: "Landing Description";
+  font-size: 20px;
+  color: rgb(215, 247, 243);
+  text-shadow: 1px 1px 2px black;
+  box-shadow: 0px 0px 25px 19px rgba(4, 4, 0, 0.364);
+  backdrop-filter: blur(3px);
+  margin-left: 3vh;
+  margin-right: 3vh;
+  margin-top: 3vh;
+  padding: 5vh;
+  margin-bottom: 10vh;
+  transition: 0.5s;
+}
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+.detail2 img {
+  width: 45vh;
+  height: 40vh;
+}
+.detail2:hover {
+  cursor: pointer;
+  border: 2px solid rgb(84, 79, 183);
+  transform: scale(105%);
+}
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  float: top;
+  margin-bottom: 40vh;
+  transition: 0.5s;
+}
