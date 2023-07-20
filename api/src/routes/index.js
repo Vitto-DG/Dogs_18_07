@@ -21,17 +21,35 @@ router.get("/dogs", (req, res) => {
         (data) => data.find((el) => el.name.toLowerCase() == name.toLowerCase()) //perro encontrado
       )
       .then((data) => {
-        return res.json(data);
+        return res.status(200).json(data);
       })
       .catch((err) => console.log(err));
   } else {
     promise.then((data) => {
-      return res.json(data);
+      return res.status(200).json(data);
     });
   }
 });
 
-
+router.get("/dogs/:id", async (req, res) => {
+  const { id } = req.params;
+  const source = isNaN(id) ? "ddbb" : "api";
+  
+    try{
+      const dog =
+      source === "api"
+      ? (await axios.get(`https://api.thedogapi.com/v1/breeds/${id}`)).data
+      : await Dog.findByPk(id, {
+        include: {
+          model: Temperament,
+          attributes: ["name"]
+        }
+      })
+      res.status(200).json(dog)
+    } catch(error){
+      res.status(400).json({error: error.message})
+    }
+})
 
 router.get("/dogs/:name", async (req, res) => {
   const { name } = req.params;
@@ -43,6 +61,17 @@ router.get("/dogs/:name", async (req, res) => {
     ? res.status(200).send(DogParams)
     : res.status(404).send("NO ESTA LLEGANDO EL PERRO POR PARAMS");
 });
+
+
+router.post("/dog", async (req, res) => {
+  const { name, weight, height, life_span, temperament } = req.body;
+  let image = req.body.image;
+  
+  await post(name, weight, height, life_span, temperament, image);
+  
+  return res.status(200).json({ msg: "perro creado" });
+});
+
 router.get("/temperament", async (req, res) => {
   let getDBInfo = await Temperament.findAll();
   if (getDBInfo.length > 0) {
@@ -54,13 +83,6 @@ router.get("/temperament", async (req, res) => {
       : res.status(404).json({ error: "NO ESTAN LLEGANDO LOS TEMPERAMENTOS" });
   }
 });
-router.post("/dog", async (req, res) => {
-  const { name, weight, height, life_span, temperament } = req.body;
-  let image = req.body.image;
 
-  await post(name, weight, height, life_span, temperament, image);
-
-  return res.status(200).json({ msg: "perro creado" });
-});
 
 module.exports = router;

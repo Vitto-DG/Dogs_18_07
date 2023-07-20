@@ -3,7 +3,7 @@
   align-items: normal;
   width: 100%;
   height: 100%;
-  padding: 5px;
+  padding: 1px;
   justify-content: center;
   border-radius: 20px;
   background-color: transparent;
@@ -13,8 +13,8 @@
   list-style: none;
   width: 15vh;
   height: 7vh;
-  padding: 0vh;
-  border-radius: 5%;
+  padding: 1vh;
+  border-radius: 40%;
   color: rgb(115, 63, 131);
   font-weight: 750;
   text-align: center;
@@ -23,18 +23,55 @@
   font-size: 3vh;
   font-family: "Landing Description";
   box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.5);
-  margin: 3vh;
+  margin: 1vh;
   opacity: 1;
   background-size: cover;
   background-color: rgba(190, 255, 255, 0.714);
   transition: 0.5s;
   text-shadow: 1px 1px 2px rgb(253, 253, 253);
 }
+.botoncito_nums {
+  cursor: pointer;
+  list-style: none;
+  width: 4vh;
+  height: 4vh;
+  border-radius: 30%;
+  color: rgb(115, 63, 131);
+  font-weight: 500;
+  text-align: center;
+  vertical-align: text-top;
+  justify-content: center;
+  font-size: 2vh;
+  font-family: "Landing Description";
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin: 0.3vh;
+  opacity: 1;
+  background-size: cover;
+  background-color: rgba(190, 255, 255, 0.714);
+  transition: 0.5s;
+  text-shadow: 1px 1px 2px rgb(253, 253, 253);
+}
+
+
 .botoncito:hover {
   transition: 0.5s;
   color: rgb(255, 183, 75);
   transform: scale(120%);
   text-shadow: 1px 1px 5px black;
+}
+
+.current{
+  width: 35px;
+  height: 35px;
+  font-family: 'OriginTech';
+  font-size: 25px;
+  color: rgb(255, 229, 34);
+  background: none;
+  border: 3px solid rgba(255, 229, 34, 0.53);
+  text-shadow: 2px 2px 1px rgb(120, 51, 139);
+  backdrop-filter: blur(15px);
+  font-family: "Info interna";
+  border-radius: 10px;
 }
 
 @media (max-width: 300px) {
@@ -89,7 +126,7 @@
     list-style: none;
     width: 10vh;
     height: 10vh;
-    padding: 2vh;
+    padding: 1vh;
     border-radius: 60%;
     color: rgb(75, 11, 11);
     font-weight: 750;

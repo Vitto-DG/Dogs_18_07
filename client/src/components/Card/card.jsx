@@ -16,7 +16,7 @@ const Card = ({ name, weight, image, temperament }) => {
           onError={({ currentTarget }) => {
             currentTarget.onerror = null; // esto evita que loopee o sea en error no hace nada y setea el src a la img que quiero
             currentTarget.src =
-              "https://cdn.com.do/wp-content/uploads/2016/08/PERRO-CHINA.jpg";
+              "https://s.t13.cl/sites/default/files/styles/manualcrop_850x475/public/t13/field-imagen/2016-09/1473948114-perroenojado.jpg.jpeg?itok=dE-zVi3m";
           }}
           alt="HOLA"
           width="175vh"
@@ -24,11 +24,11 @@ const Card = ({ name, weight, image, temperament }) => {
           
         />
         <h3>{name ? name : "XD"}</h3>
-        <div>Weight: {`${weight} KG`}</div>
+        <div>Peso: {`${weight} KG`}</div>
         <div>
-          Temperament: {temperament
+          Temperamento: {temperament
             ? temperament.map((el) => el.name)
-            : " No temperaments found."}
+            : " No se encontraron temperamentos."}
         </div>
       </div>
     </>

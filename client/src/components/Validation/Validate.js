@@ -2,71 +2,71 @@ export default function validate(input) {
   let errors = {};
   var regex = new RegExp("^[0-9-]+$");
   if (!input.name) {
-    errors.name = "A name is required";
+    errors.name = "Se require un nombre";
   } else if (input.name.length < 3 || input.name.length > 20) {
-    errors.name = "The name must have a length between 3 and 20 characters";
+    errors.name = "El nombre debe tener entre 3 y 20 caracteres";
   } else if (/[`!@#$%^&*()_+\-=[\]{};':"\\|,.<>\d/?~]/.test(input.name)) {
-    errors.name = "Only capital and lower case letters";
+    errors.name = "Solo mayusculas y minusculas.";
   } else if (
     input.name.includes("-") ||
     input.name.charAt(input.name.length - 1) == " " ||
     input.name.charAt(0) == " "
   ) {
-    errors.name = "Enter a valid name, mix of capital and lower case!";
+    errors.name = "Ingrese un nombre válido, con mayusculas y minusculas!";
   }
   /////////////////
   else if (!input.height) {
-    errors.height = "It's required a height of format 'Hmin-Hmax'";
+    errors.height = "El formato para la altura debe ser 'Hmin-Hmax'";
   } else if (!input.height.charAt(input.height.indexOf("-") + 1)) {
-    errors.height = "It's required a height of format 'Hmin-Hmax'";
+    errors.height = "El formato para la altura debe ser 'Hmin-Hmax'";
   } else if (!input.height.includes("-")) {
-    errors.height = "It's required a height of format 'Hmin-Hmax'";
+    errors.height = "El formato para la altura debe ser 'Hmin-Hmax'";
   } else if (
     Number(input.height.split("-")[0]) > Number(input.height.split("-")[1])
   ) {
-    errors.height = "Maximum height must be higher than the minimum height";
+    errors.height = "La altura Máxima debe ser superior a la Mínima";
   } else if (regex.test(input.height) == false) {
-    errors.height = "Only positive integer numbers!";
+    errors.height = "Solo numeros enteros mayores a 0!";
   } else if (input.height.charAt(0) == "-") {
-    errors.height = "Only positive integer numbers!";
+    errors.height = "Solo numeros enteros mayores a 0!";
   }
   ////////////////////
   else if (!input.weight) {
-    errors.weight = "It's required a weight of format 'Wmin-Wmax'";
+    errors.weight = "El formato para el peso debe ser 'Wmin-Wmax'";
   } else if (!input.weight.includes("-")) {
-    errors.weight = "It's required a weight of format 'Wmin-Wmax'";
+    errors.weight = "El formato para el peso debe ser 'Wmin-Wmax'";
   } else if (!input.weight.charAt(input.weight.indexOf("-") + 1)) {
-    errors.weight = "It's required a weight of format 'Wmin-Wmax'.";
+    errors.weight = "El formato para el peso debe ser 'Wmin-Wmax'.";
   } else if (
     Number(input.weight.split("-")[0]) > Number(input.weight.split("-")[1])
   ) {
-    errors.weight = "Maximum weight must be higher than the minimum weight";
+    errors.weight = "El peso Máximo debe ser superior al peso Mínimo";
   } else if (regex.test(input.weight) == false) {
-    errors.weight = "Only positive integer numbers!";
+    errors.weight = "Solo numeros enteros mayores a 0!";
   } else if (input.weight.charAt(0) == "-") {
-    errors.weight = "Only positive integer numbers!";
+    errors.weight = "Solo numeros enteros mayores a 0!";
   }
   ////////////////////
   else if (!input.life_span) {
-    errors.life_span = "It's required a life span of format 'Vmin-Vmax'";
+    errors.life_span = "El formato para los años de vida debe ser 'Vmin-Vmax'";
   } else if (!input.life_span.includes("-")) {
-    errors.life_span = "It's required a life span of format 'Vmin-Vmax'";
+    errors.life_span = "l formato para los años de vida debe ser 'Vmin-Vmax'";
   } else if (!input.life_span.charAt(input.life_span.indexOf("-") + 1)) {
-    errors.life_span = "It's required a life span of format 'Vmin-Vmax'";
+    errors.life_span = "l formato para los años de vida debe ser 'Vmin-Vmax'";
   } else if (
     Number(input.life_span.split("-")[0]) >
     Number(input.life_span.split("-")[1])
   ) {
     errors.life_span =
-      "The maximum life span must be higher than the minimum life span";
+      "Los años de vida máximos deben ser mayores a los mínimos.";
   } else if (regex.test(input.life_span) == false) {
-    errors.life_span = "Only positive integer numbers!";
+    errors.life_span = "Solo numeros enteros mayores a 0!";
   } else if (input.life_span.charAt(0) == "-") {
-    errors.life_span = "Only positive integer numbers!";
+    errors.life_span = "Solo numeros enteros mayores a 0!";
   }
   ////////////////////////////////
   else if (input.temperament?.length == 5) {
-    errors.temperament = "You can only add up to six temperaments";
+    errors.temperament = "Solo puedes seleccionar hasta 6 temperamentos";
   }
   //////////////////////////////////
   if (!errors.name && !errors.height && !errors.weight && !errors.life_span) {

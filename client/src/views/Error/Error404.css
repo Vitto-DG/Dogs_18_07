@@ -1,15 +1,15 @@
 .container2 {
   display: flex;
   flex-direction: column;
-  background-image: url("../../../img/MADDOG.jpg");
-  background-size: cover;
+  background-image: url("https://www.diariodenavarra.es/uploads/2016/10/04/60b133c9ef237.jpeg");
   background-repeat: no-repeat;
   background-position: center;
+  font-family: "Landing font";
   position: fixed;
   width: 100%;
   height: 100%;
   font-weight: 800;
-  color: rgb(248, 196, 98);
+  color: rgb(248, 98, 98);
   font-size: 11vh;
   text-shadow: 1px 1px 2px black;
 }
@@ -17,14 +17,15 @@
   display: flex;
   width: fit-content;
   align-self: center;
-  background-color: rgb(248, 196, 98);
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
   font-size: 4vh;
   padding: 2vh;
-  color: green;
+  font-family: "Info interna";
+  color: rgb(255, 27, 27);
 }
 .getback:hover {
-  color: red;
+  color: rgb(13, 255, 0);
   transform: scale(105%);
 }
 @media (min-width: 250px) and (max-width: 650px) {

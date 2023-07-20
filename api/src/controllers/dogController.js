@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 const { Dog, Temperament } = require("../db");
 
-//--------------------------------------MANEJO DE INFO DE API, DB Y UNION DE AMBAS-------------------------------------//
+// oooooooooo Obtengo la info de la API, de la BBDD y la junto ---/
 
 const getAPIinfo = async () => {
   const apiURL = await fetch(
@@ -25,7 +25,7 @@ const getAllInfo = async () => {
   apiinfo.map((el) => {
     el.createdByDB = false;
   });
-  //apiinfo de aca abajo modifico lo que viene de la API para que este igual a lo de la DB y asi poder filtrar correctamente//
+  // adapto la INFO de la API para que coincida con de la DB y filtrar efectivamente//
   apiinfo.map((el) => {
     if (el.hasOwnProperty("temperament")) {
       let element = el.temperament;
@@ -37,7 +37,7 @@ const getAllInfo = async () => {
     }
   });
   let dbinfo = await getDBInfo();
-  let totalinfo = await apiinfo.concat(dbinfo); //ACA UNO API Y DB
+  let totalinfo = await apiinfo.concat(dbinfo); // junto info de ambas fuentes
   return totalinfo;
 };
 
@@ -49,7 +49,7 @@ const totalinfo = async () => {
     }
     if (!el.weight.metric.includes("-")) {
       el.weight.metric = `4 - ${el.weight.metric}`;
-    } //aca le puse 4 de minimo porque como vienen de la API es un peso apropiado para cachorro
+    } 
     allInfo.sort((a, b) => {
       if (a.name.toLowerCase() > b.name.toLowerCase()) {
         return 1;
@@ -62,10 +62,10 @@ const totalinfo = async () => {
   });
   return allInfo;
 };
-//----------------------------MANEJO DE INFO DE API, DB Y UNION DE AMBAS---------------------------------------------------//
 
 
-//-------------------------------------------------MANEJO DE POST-----------------------------------------------//
+
+// ooooooo Funcion POST
 
 const post = async (name, weight, height, life_span, temperament, image) => {
   let newDog = await Dog.create({
@@ -82,5 +82,5 @@ const post = async (name, weight, height, life_span, temperament, image) => {
 
   return await newDog.addTemperament(TemperamentDB);
 };
-//------------------------------------------------MANEJO DE POST-------------------------------------------------------//
+
 module.exports = { getAPIinfo, getAllInfo, totalinfo, getTemp, post };

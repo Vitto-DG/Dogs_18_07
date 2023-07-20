@@ -18,15 +18,14 @@
   text-align: center;
 }
 .search button {
-  background-size: contain;
   border-radius: 10%;
   float: right;
-  padding: 2px 5px;
+  padding: 2px 2px;
   font-size: 15px;
   font-weight: 600;
   border: none;
   cursor: pointer;
-  color: rgb(75, 11, 11);
+  color: rgb(74, 78, 174);
   transition: 0.5s;
   text-shadow: 1px 1px 2.5px black;
 }
@@ -59,13 +58,13 @@
   .search button {
     
     background-size: contain;
-    border-radius: 30%;
+    border-radius: 10%;
     padding: 5px 10px;
     font-size: 15px;
     font-weight: 600;
     border: none;
     cursor: pointer;
-    color: rgb(75, 11, 11);
+    color: rgb(51, 73, 197);
     transition: 0.5s;
     text-shadow: 1px 1px 2.5px rgb(221, 221, 221);
     position: sticky;
@@ -98,7 +97,7 @@
     font-weight: 600;
     border: none;
     cursor: pointer;
-    color: rgb(75, 11, 11);
+    color: rgb(49, 57, 194);
     transition: 0.5s;
     text-shadow: 1px 1px 2.5px rgb(245, 241, 241);
     position: sticky;
@@ -121,17 +120,16 @@
     margin-left: 10px;
   }
   .search button {
-    background-size: contain;
     border-radius: 30%;
-    padding: 5px 10px;
-    font-size: 15px;
+    padding: 5px 5px;
+    font-size: 20px;
     font-weight: 600;
     border: none;
     cursor: pointer;
-    color: rgb(75, 11, 11);
+    color: rgb(88, 108, 199);
     transition: 0.5s;
-    text-shadow: 1px 1px 2.5px black;
+    text-shadow: 1px 1px 2.5px rgb(255, 255, 255);
     position: sticky;
-    right: 10px;
+    font-family: "Info interna";
   }
 }

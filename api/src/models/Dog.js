@@ -14,10 +14,21 @@ module.exports = (sequelize) => {
       defaultValue: UUIDV4,
       allowNull: false,
     },
-    height: { type: DataTypes.JSON, allowNull: false },
-    weight: { type: DataTypes.JSON, allowNull: false },
-    life_span: { type: DataTypes.STRING, allowNull: true },
-    image: { type: DataTypes.JSON, allowNull: false },
+    height: { 
+      type: DataTypes.JSON,
+      allowNull: false 
+    },
+    weight: { 
+      type: DataTypes.JSON, 
+      allowNull: false 
+    },
+    life_span: { 
+      type: DataTypes.STRING, 
+      allowNull: true },
+    image: { 
+      type: DataTypes.JSON, 
+      allowNull: false 
+    },
     createdByDB: {
       type: DataTypes.BOOLEAN,
       allowNull: false,

@@ -8,14 +8,14 @@ const nav = (e) => {
   }
   return (
     <>
-      <div class="flex-container">
+      <div className="flex-container">
         <Link to="/home" style={{ textDecoration: "none" }}>
-          <div class="letters" onClick={() => HandleClick()}>
+          <div className="letters" onClick={() => HandleClick()}>
             Home
           </div>
         </Link>
         <Link to="/create" style={{ textDecoration: "none" }}>
-          <div class="letters">Nuevo Perro</div>
+          <div className="letters">Nuevo Perro</div>
         </Link>
       </div>
     </>

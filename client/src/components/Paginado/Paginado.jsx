@@ -27,14 +27,14 @@ const Paginado = ({
       >
         -Prev 
       </button>
-      <ul className="pageNumbers">
+      <ul className="">
       {
         pageNums && 
-        pageNums.map(num => {
+        pageNums.map(num => (
           <button key={num} className={CurrentPage === num ? 
-          "current" : "button"} onClick={() => 
+          "current" : "botoncito_nums"} onClick={() => 
           paginado(num)}>{num}</button>
-        })
+        ))
       }
       </ul>
       <button
@@ -44,7 +44,7 @@ const Paginado = ({
       >
         Sig- 
       </button>
-      <button class="botoncito" onClick={lastPage}>
+      <button className="botoncito" onClick={lastPage}>
         Final
       </button>
     

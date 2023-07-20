@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { GetDogsName } from "../../../redux/actions/index.js";
+import { GetDogsName } from "../../redux/actions/index";
 import "./searchbar.css";
 
 const Searchbar = () => {
@@ -34,9 +34,9 @@ const Searchbar = () => {
 
   return (
     <>
-      <div class="search">
+      <div className="search">
         <input
-          class="search"
+          className="search"
           type="search"
           placeholder="Busca una raza"
           value={input}

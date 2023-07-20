@@ -4,24 +4,24 @@ const { expect } = require("chai");
 describe("Dog model", () => {
   before(() =>
     conn.authenticate().catch((err) => {
-      console.error("Unable to connect to the database:", err);
+      console.error("Imposible conectarse a la base de datos:", err);
     })
   );
 });
-describe("Validators", () => {
+describe("Validaciones", () => {
   beforeEach(() => Dog.sync({ force: true }));
   describe("name", () => {
-    it("should throw an error if name is null", (done) => {
+    it("deberá arrojar un error si name es null", (done) => {
       Dog.create({ name: null })
-        .then(() => done(new Error("It requires a valid name")))
+        .then(() => done(new Error("Requiere un nombre válido")))
         .catch(() => done());
     });
-    it("should work when its a valid name", () => {
+    it("debería funcionar si es un nombre válido", () => {
       Dog.create({ name: "Pug" });
     });
-    it("Should not be created without all fields completed", (done) => {
+    it("No debería crearse si alguno de los campos está vacio", (done) => {
       Dog.create({ height: "4-25", weight: "4-23", image: "xd" })
-        .then(() => done("Error, some are fields incomplete!"))
+        .then(() => done("Error, algunos campos están incompletos!"))
         .catch(() => done());
     });
   });
@@ -29,19 +29,19 @@ describe("Validators", () => {
 describe("Temperament model", () => {
   before(() =>
     conn.authenticate().catch((err) => {
-      console.error("Unable to connect to the database:", err);
+      console.error("Imposible conectarse a la base de datos:", err);
     })
   );
 });
-describe("Validators", () => {
+describe("Validaciones", () => {
   beforeEach(() => Temperament.sync({ force: true }));
   describe("name", () => {
-    it("Temperament should have an unique ID", (done) => {
+    it("Temperamento debe tener una unica ID", (done) => {
       Temperament.create({ id: "1" })
-        .then(() => done(new Error("ID must be valid")))
+        .then(() => done(new Error("El ID debe ser válido")))
         .catch(() => done());
     });
-    it("should work when its a valid name", () => {
+    it("deberá funcionar cuando sea un nombre válido", () => {
       expect(typeof Temperament.name).equal("string");
     });
   });

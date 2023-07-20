@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
-import Searchbar from "../Searchbar/searchbar.jsx";
-import Card from "../Card/card.jsx";
+import Searchbar from "../../components/Searchbar/searchbar";
+import Card from "../../components/Card/card";
 import {
   getDogs,
   Order,
   FilterByTemperament,
   FilterCreated,
   getTemperament,
-} from "../../../redux/actions/index.js";
+} from "../../redux/actions/index";
 import { useDispatch, useSelector } from "react-redux";
-import Paginado from "../Paginado/Paginado.jsx";
-import Nav from "../Nav/nav.jsx";
-;
+import Paginado from "../../components/Paginado/Paginado.jsx";
+import Nav from "../../components/Nav/nav.jsx";
+
 
 const Home = () => {
   const Temperaments = useSelector((state) => state.Temperaments);
@@ -31,6 +31,7 @@ const Home = () => {
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber);
   }
+  
   //-------------------PAGINADO------------------//
 
   const pageNums = [];

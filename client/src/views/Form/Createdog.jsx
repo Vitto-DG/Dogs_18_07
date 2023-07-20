@@ -2,10 +2,12 @@
 import { React, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { postDog, getTemperament } from "../../../redux/actions/index.js";
-import Nav from "../Nav/nav.jsx";
+import { postDog, getTemperament } from "../../redux/actions/index";
+import Nav from "../../components/Nav/nav";
 import "./Createdog.css";
-import validate from "../Validation/Validate.js";
+import validate from "../../components/Validation/Validate.js";
+
+
 const Createdog = () => {
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});

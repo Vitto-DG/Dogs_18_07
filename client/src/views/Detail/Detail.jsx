@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import Nav from "../Nav/nav.jsx";
+import Nav from "../../components/Nav/nav";
 import "./Detail.css";
+
 const Detail = () => {
   const [dog, setDog] = useState({});
-  let { name } = useParams();
+  let { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:3001/dogs/${name}`)
+    fetch(`http://localhost:3001/dogs/${id}`)
       .then((response) => response.json())
       .then((response) => setDog(response))
       .catch((error) => {

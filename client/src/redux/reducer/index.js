@@ -7,6 +7,7 @@ const initialState = {
     filterTemps: "all",
     FilterApiDB: "all",
   },
+  dogDetail: []
 };
 function RootReducer(state = initialState, action) {
   switch (action.type) {
@@ -58,7 +59,11 @@ function RootReducer(state = initialState, action) {
           FilterApiDB: action.payload,
         },
       };
-
+      case "GET_DETAILS":
+        return{
+          ...state,
+          dogDetail: action.payload
+        };
     case "ORDER":
       let sort = [];
       let order = action.payload;

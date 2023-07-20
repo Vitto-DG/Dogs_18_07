@@ -1,4 +1,5 @@
 //PREGUNTAR SI ES IGUAL CON FETCH
+import axios from 'axios';
 
 export function getDogs() {
   return async function (dispatch) {
@@ -7,6 +8,21 @@ export function getDogs() {
       .then((data) => dispatch({ type: "GET_DOGS", payload: data }));
   };
 }
+
+export function getDogDetail(id) {
+  return async function(dispatch){
+    try{
+      const res = await axios.get(`http://localhost:3001/dogs/${id}`)
+      return dispatch({
+        type: "GET_DETAILS",
+        payload: res.data
+      })
+    }catch(error){
+      alert("No se encuentra al perro")
+    }
+  }
+}
+
 export function GetDogsName(name) {
   return async function (dispatch) {
     try {

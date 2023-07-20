@@ -6,16 +6,16 @@ const Error404 = () => {
     <>
       <div className="container2">
         <div>
-          <p>OOPS ERROR 404!</p>
+          <p>ERROR 404!</p>
         </div>
         <div>
-          <p>SOMETHING WENT INCREDIBLY AWFULLY WRONG!</p>
+          <p>UUh algo no salió bien!</p>
         </div>
         <button
           className="getback"
           onClick={() => window.location.replace("/home")}
         >
-          GET BACK TO HOME
+          Volver al Home
         </button>
       </div>
     </>

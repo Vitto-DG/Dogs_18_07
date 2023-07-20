@@ -13,21 +13,21 @@ const dog = {
 };
 const temperament = { name: "Aloof" };
 
-describe("Dogs routes", () => {
+describe("Rutas perros", () => {
   before(async () =>
     conn.authenticate().catch((err) => {
-      console.error("Unable to connect to the database:", err);
+      console.error("Imposible conectarse con la base de datos:", err);
     })
   );
   beforeEach(() => Dog.sync({ force: true }).then(() => Dog.create(dog)));
   describe("GET /dogs", () => {
-    it("should get 200", () => agent.get("/dogs").expect(200)).timeout(10000);
+    it("Debe traer 200", () => agent.get("/dogs").expect(200)).timeout(10000);
   });
 });
-describe("Temperament routes", () => {
+describe("Rutas temperamentos", () => {
   before(async () =>
     conn.authenticate().catch((err) => {
-      console.error("Unable to connect to the database:", err);
+      console.error("Imposible conectarse con la base de datos:", err);
     })
   );
   beforeEach(() =>
@@ -36,7 +36,7 @@ describe("Temperament routes", () => {
     )
   );
   describe("GET /temperament", () => {
-    it("should get 200", () => agent.get("/temperament").expect(200)).timeout(
+    it("Debe traer 200", () => agent.get("/temperament").expect(200)).timeout(
       5000
     );
   });
